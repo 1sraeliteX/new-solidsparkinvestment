@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-service-page="fund-recovery">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Fund Recovery information and market tools on Solidspark Investment." />
+  <title>Fund Recovery — Solidspark Investment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/sparkbot.css" />
+  <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-tickers.js"></script>
+</head>
+<body>
+  <canvas id="gold-dust-canvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-area">
+        <a href="solid_spark_investment%20.html" class="ssi-logo-box" aria-label="Solidspark Investment home">
+          <img class="brand-logo brand-logo-dark" src="Images/logoblue.png" alt="Solidspark Investment" />
+          <img class="brand-logo brand-logo-light" src="Images/logoblack.jpg" alt="Solidspark Investment" />
+        </a>
+        <div id="google_translate_element"><span id="gt-fallback" class="gt-fallback-widget">Language: English</span></div>
+      </div>
+      <nav id="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="solid_spark_investment%20.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item" id="services-nav-item">
+            <button type="button" class="nav-link" id="services-dropdown-toggle" aria-expanded="false" aria-controls="services-dropdown">Services <span aria-hidden="true">⌄</span></button>
+            <div class="services-dropdown" id="services-dropdown">
+              <a class="services-dropdown-link" href="realestate.html" data-service="real-estate" data-page-url="realestate.html">Real Estate</a>
+              <a class="services-dropdown-link" href="gold.html" data-service="gold-commodities" data-page-url="gold.html">Gold Commodities</a>
+              <a class="services-dropdown-link" href="crypto.html" data-service="crypto-currency" data-page-url="crypto.html">Crypto Currency</a>
+              <a class="services-dropdown-link" href="stocks.html" data-service="stock-and-etfs" data-page-url="stocks.html">Stocks and ETFs</a>
+              <a class="services-dropdown-link" href="agriculture.html" data-service="agriculture" data-page-url="agriculture.html">Agriculture</a>
+              <a class="services-dropdown-link" href="loans.html" data-service="loan-offers" data-page-url="loans.html">Loan Offers</a>
+              <a class="services-dropdown-link" href="fund-recovery.html" data-service="fund-recovery" data-page-url="fund-recovery.html">Fund Recovery</a>
+              <a class="services-dropdown-link" href="big-bank-energy.html" data-service="big-bank-energy" data-page-url="big-bank-energy.html">Big Bank Energy Investment</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="solid_spark_investment%20.html#assets-heading">Markets</a></li>
+          <li class="nav-item"><a class="nav-link" href="solid_spark_investment%20.html#solidspark-faq">Support</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle light and dark theme">
+          <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13z"/></svg>
+          <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        </button>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+        <div class="account-menu-wrap" id="account-menu-wrap">
+          <button type="button" class="btn btn-blue btn-sm" id="account-menu-toggle" aria-expanded="false" aria-controls="account-menu">Get started</button>
+          <div class="account-menu" id="account-menu">
+            <a class="account-menu-link" href="https://user.solidsparkinvestment.ltd/login">Login</a>
+            <a class="account-menu-link" href="https://user.solidsparkinvestment.ltd/register">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="home-page-view" aria-hidden="true"></main>
+  <div id="service-page-view" aria-live="polite"></div>
+  <div id="info-page-view" aria-live="polite"></div>
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-top-row">
+        <a href="solid_spark_investment%20.html" class="ssi-logo-box" aria-label="Solidspark Investment home">
+          <img class="brand-logo brand-logo-dark" src="Images/logoblue.png" alt="Solidspark Investment" />
+          <img class="brand-logo brand-logo-light" src="Images/logoblack.jpg" alt="Solidspark Investment" />
+        </a>
+        <nav class="footer-nav-links" aria-label="Footer Navigation">
+          <a href="solid_spark_investment%20.html">Home</a><a href="about.html">About</a>
+          <a href="solid_spark_investment%20.html#solidspark-faq">FAQs</a><a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-services-bar">
+        <span class="footer-services-title">Investment Services</span>
+        <nav class="footer-services-grid" aria-label="Investment Services Navigation">
+          <a href="realestate.html" data-service="real-estate" data-page-url="realestate.html">Real Estate</a>
+          <a href="gold.html" data-service="gold-commodities" data-page-url="gold.html">Gold Commodities</a>
+          <a href="crypto.html" data-service="crypto-currency" data-page-url="crypto.html">Crypto Currency</a>
+          <a href="stocks.html" data-service="stock-and-etfs" data-page-url="stocks.html">Stocks and ETFs</a>
+          <a href="agriculture.html" data-service="agriculture" data-page-url="agriculture.html">Agriculture</a>
+          <a href="loans.html" data-service="loan-offers" data-page-url="loans.html">Loan Offers</a>
+          <a href="fund-recovery.html" data-service="fund-recovery" data-page-url="fund-recovery.html">Fund Recovery</a>
+          <a href="big-bank-energy.html" data-service="big-bank-energy" data-page-url="big-bank-energy.html">Big Bank Energy Investment</a>
+        </nav>
+      </div>
+      <div class="footer-bottom-row"><div class="footer-copy">&copy; 2026 SOLIDSPARKINVESTMENT. All rights reserved.</div></div>
+    </div>
+  </footer>
+  <div class="floating-chat-left" id="floating-chat-widget">
+    <div class="chat-pill-row" id="chat-pill-row"><button type="button" class="chat-close-mini" id="close-chat-pill" aria-label="Dismiss chat prompt">✕</button><div class="chat-text-pill">Chat with us</div></div>
+    <button type="button" class="whatsapp-circle-btn" aria-label="Open WhatsApp Chat"><img src="Images/whatsapp.png" alt="WhatsApp" /></button>
+  </div>
+  <button type="button" class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">⌃</button>
+  <script src="assets/translate.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/sparkbot.js" defer></script>
+</body>
+</html>

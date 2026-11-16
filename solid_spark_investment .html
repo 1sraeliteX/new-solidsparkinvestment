@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solidspark Investment — Multi-Asset Trading &amp; Investment Platform</title>
+  <meta name="description" content="Invest and trade crypto, stocks, ETFs and metals in one place with Solidspark Investment." />
+  
+  <!-- Google Fonts: Anton (Display Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/sparkbot.css" />
+</head>
+<body>
+  <canvas id="gold-dust-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-area">
+        <a href="#home" data-nav="home" class="ssi-logo-box" aria-label="Solidspark Investment home">
+          <img class="brand-logo brand-logo-dark" src="Images/logoblue.png" alt="Solidspark Investment" />
+          <img class="brand-logo brand-logo-light" src="Images/logoblack.jpg" alt="Solidspark Investment" />
+        </a>
+        <div id="google_translate_element">
+          <span id="gt-fallback" class="gt-fallback-widget" aria-label="Language: English">Language: English</span>
+        </div>
+      </div>
+
+      <nav id="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="#home" data-nav="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item" id="services-nav-item">
+            <button type="button" class="nav-link" id="services-dropdown-toggle" aria-expanded="false" aria-controls="services-dropdown">Services <span aria-hidden="true">⌄</span></button>
+            <div class="services-dropdown" id="services-dropdown">
+              <a class="services-dropdown-link" href="realestate.html" data-service="real-estate" data-page-url="realestate.html">Real Estate</a>
+              <a class="services-dropdown-link" href="gold.html" data-service="gold-commodities" data-page-url="gold.html">Gold Commodities</a>
+              <a class="services-dropdown-link" href="crypto.html" data-service="crypto-currency" data-page-url="crypto.html">Crypto Currency</a>
+              <a class="services-dropdown-link" href="stocks.html" data-service="stock-and-etfs" data-page-url="stocks.html">Stocks and ETFs</a>
+              <a class="services-dropdown-link" href="agriculture.html" data-service="agriculture" data-page-url="agriculture.html">Agriculture</a>
+              <a class="services-dropdown-link" href="loans.html" data-service="loan-offers" data-page-url="loans.html">Loan Offers</a>
+              <a class="services-dropdown-link" href="fund-recovery.html" data-service="fund-recovery" data-page-url="fund-recovery.html">Fund Recovery</a>
+              <a class="services-dropdown-link" href="big-bank-energy.html" data-service="big-bank-energy" data-page-url="big-bank-energy.html">Big Bank Energy</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#assets-heading" data-nav="home">Markets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faqs" data-nav="home">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle light and dark theme">
+          <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13z"/></svg>
+          <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        </button>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+        <div class="account-menu-wrap" id="account-menu-wrap">
+          <button type="button" class="btn btn-blue btn-sm" id="account-menu-toggle" aria-expanded="false" aria-controls="account-menu">Get started</button>
+          <div class="account-menu" id="account-menu">
+            <a class="account-menu-link" href="https://user.solidsparkinvestment.ltd/login">Login</a>
+            <a class="account-menu-link" href="https://user.solidsparkinvestment.ltd/register">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="home-page-view" class="is-active">
+    <div class="tv-ticker-bar" aria-label="Live market ticker">
+      <div class="tradingview-widget-container" style="height:58px;width:100%">
+        <div class="tradingview-widget-container__widget"></div>
+      </div>
+    </div>
+
+    <section class="hero-section" id="home" aria-labelledby="hero-title">
+      <div class="hero-video-stage" aria-hidden="true">
+        <video class="hero-video-item is-active" src="Images/videos/vid2-web.mp4" muted autoplay playsinline preload="auto"></video>
+        <video class="hero-video-item" src="Images/videos/vid3-web.mp4" muted playsinline preload="metadata"></video>
+        <video class="hero-video-item" src="Images/videos/vid1-web.mp4" muted playsinline preload="metadata"></video>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="pill-outline">One platform. Multiple markets.<span class="hero-status-dot" aria-hidden="true"></span></p>
+        <h1 class="hero-title" id="hero-title">INVEST IN WHAT MOVES YOU</h1>
+        <p class="hero-subtitle">Explore crypto, stocks, ETFs and metals from one streamlined dashboard. Investing involves risk; values can rise or fall.</p>
+        <div class="hero-cta">
+          <a href="#assets-heading" class="btn btn-blue btn-lg">Explore markets</a>
+          <a href="#steps-heading" class="btn btn-lg" style="border-color:#777;color:#fff">How it works</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="trust-heading">
+      <div class="container">
+        <p class="eyebrow">Why choose Solidspark</p>
+        <h2 class="section-heading" id="trust-heading">A CLEARER WAY TO EXPLORE MARKETS</h2>
+        <div class="trust-grid">
+          <article class="trust-card"><span class="trust-icon" aria-hidden="true">↗</span><h3 class="trust-title">MULTI-ASSET ACCESS</h3><p class="trust-text">Explore a range of asset categories from one account interface.</p></article>
+          <article class="trust-card"><span class="trust-icon" aria-hidden="true">⌘</span><h3 class="trust-title">TOOLS THAT INFORM</h3><p class="trust-text">Review market information and portfolio details in one place.</p></article>
+          <article class="trust-card"><span class="trust-icon" aria-hidden="true">◷</span><h3 class="trust-title">LEARN AT YOUR PACE</h3><p class="trust-text">Use educational resources to understand risks before investing.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="investments-heading">
+      <div class="container">
+        <div class="panel-monochrome">
+          <p class="eyebrow">Explore a range of investments</p>
+          <h2 class="section-heading" id="investments-heading">ALL YOUR INVESTMENTS IN ONE PLACE</h2>
+          <div class="category-grid" id="service-category-grid"></div>
+
+          <p class="disclaimer-text">Investing carries risks. Conduct your own research before concluding a transaction.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         MORE THAN AN INVESTMENT PLATFORM (Section 5)
+    ========================================================== -->
+    <section class="section" aria-labelledby="platform-heading">
+      <div class="container">
+        <p class="eyebrow">More ways to explore</p>
+        <h2 id="platform-heading" class="section-heading">
+          MORE THAN AN INVESTMENT PLATFORM
+        </h2>
+
+        <div class="section-video-wrap" aria-label="Featured investment platform video">
+          <video class="section-video" src="Images/videos/solid-web.mp4" muted autoplay playsinline loop preload="auto"></video>
+        </div>
+
+        <div class="feature-split-grid">
+          <article class="feature-card">
+            <div>
+              <h3 class="split-card-title">NEW STARS ON THE CRYPTO HORIZON</h3>
+              <p class="split-card-desc">Discover dynamic, hard-to-find coins and projects with SOLIDSPARK Spotlight.</p>
+            </div>
+            <img class="feature-card-image ratio-1x1" src="Images/horizon.jpg" alt="Crypto horizon feature preview" />
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <h3 class="split-card-title">BEST-IN-CLASS SECURITY</h3>
+              <p class="split-card-desc">Our security programme shows our commitment to the highest industry standards.</p>
+            </div>
+            <img class="feature-card-image ratio-1x1" src="Images/secure.jpg" alt="Security feature preview" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HOW IT WORKS (Section 6)
+    ========================================================== -->
+    <section class="section" aria-labelledby="steps-heading">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="pill-outline">How it works</span>
+          <h2 id="steps-heading" class="section-heading">
+            GET STARTED IN MINUTES
+          </h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-item">
+            <div class="step-card">
+              <img class="step-image" src="Images/register.png" alt="Register your Solidspark account" />
+              <h3 class="step-card-title">REGISTER</h3>
+            </div>
+            <div class="step-caption">
+              <span class="step-number">1</span>
+              <p>Sign up to create your free account.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-card">
+              <img class="step-image" src="Images/login.png" alt="Log in to your Solidspark Investment account" />
+              <h3 class="step-card-title">LOGIN</h3>
+            </div>
+            <div class="step-caption">
+              <span class="step-number">2</span>
+              <p>Login to your SOLISAPRKINVESTMENT account.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-card">
+              <img class="step-image" src="Images/deposit.png" alt="Deposit funds into your account" />
+              <h3 class="step-card-title">DEPOSIT</h3>
+            </div>
+            <div class="step-caption">
+              <span class="step-number">3</span>
+              <p>Deposit funds securely through popular options.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-card">
+              <img class="step-image" src="Images/Invest.png" alt="Invest in digital assets" />
+              <h3 class="step-card-title">INVEST</h3>
+            </div>
+            <div class="step-caption">
+              <span class="step-number">4</span>
+              <p>Invest in digital assets 24/7.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-cta-center">
+          <a href="https://user.solidsparkinvestment.ltd/login" class="btn btn-blue btn-lg">Get started</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         KEEP TRACK OF YOUR FAVOURITE ASSETS (Section 7)
+    ========================================================== -->
+    <section class="section" aria-labelledby="assets-heading">
+      <div class="container">
+        <div class="panel-monochrome">
+          <p class="eyebrow">Your market watchlist</p>
+          <h2 id="assets-heading" class="section-heading">
+            KEEP TRACK OF YOUR FAVOURITE ASSETS
+          </h2>
+
+          <div class="filter-tabs" role="tablist" aria-label="Asset categories">
+            <button type="button" class="filter-tab is-active" role="tab" aria-selected="true" data-filter="All assets">All assets</button>
+            <button type="button" class="filter-tab" role="tab" aria-selected="false" data-filter="Crypto">Crypto</button>
+            <button type="button" class="filter-tab" role="tab" aria-selected="false" data-filter="Leverage">Leverage</button>
+            <button type="button" class="filter-tab" role="tab" aria-selected="false" data-filter="Crypto Indices">Crypto Indices</button>
+            <button type="button" class="filter-tab" role="tab" aria-selected="false" data-filter="Stocks">Stocks</button>
+            <button type="button" class="filter-tab" role="tab" aria-selected="false" data-filter="Metals">Metals</button>
+          </div>
+
+          <div class="asset-carousel-track" id="asset-carousel" aria-live="polite"></div>
+
+          <div class="carousel-controls">
+            <button type="button" class="circle-arrow-btn" id="asset-prev" aria-label="Previous assets">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button type="button" class="circle-arrow-btn" id="asset-next" aria-label="Next assets">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <p class="disclaimer-text">Past performance is not an indication of future performance.</p>
+
+          <div class="section-cta-center">
+            <a href="#assets-heading" class="btn btn-blue btn-lg">See all prices</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BOOST YOUR FINANCIAL LITERACY (Section 8)
+    ========================================================== -->
+    <section class="section" aria-labelledby="literacy-heading">
+      <div class="container">
+        <p class="eyebrow">Build your market knowledge</p>
+        <h2 id="literacy-heading" class="section-heading">
+          BOOST YOUR FINANCIAL LITERACY
+        </h2>
+
+        <div class="feature-split-grid">
+          <article class="feature-card is-coming-soon" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Solidspark Academy — coming soon">
+            <div>
+              <h3 class="split-card-title">SOLIDSPARK ACADEMY</h3>
+              <p class="split-card-desc">Learn all about investing, crypto and blockchain fundamentals.</p>
+            </div>
+            <img class="feature-card-image ratio-1x1" src="Images/cominsoon.jpg" alt="Solidspark Academy coming soon" />
+          </article>
+
+          <article class="feature-card is-coming-soon" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Solidspark Blog — coming soon">
+            <div>
+              <h3 class="split-card-title">SOLIDSPARK BLOG</h3>
+              <p class="split-card-desc">Get the latest company news, insights and market updates.</p>
+            </div>
+            <img class="feature-card-image ratio-1x1" src="Images/cominsoon.jpg" alt="Solidspark Blog coming soon" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         REVIEWS SECTION (Section 9)
+    ========================================================== -->
+    <section class="section" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="panel-monochrome">
+          <p class="eyebrow">Investor perspectives</p>
+          <h2 id="reviews-heading" class="section-heading">
+            DON'T JUST TAKE OUR WORD FOR IT
+          </h2>
+
+          <div class="reviews-layout">
+            <div class="reviews-summary">
+              <p class="rating-label">4.5 / 5</p>
+              <div class="stars-row" aria-label="4.5 out of 5 stars">
+                <span class="star-box star-filled">★</span>
+                <span class="star-box star-filled">★</span>
+                <span class="star-box star-filled">★</span>
+                <span class="star-box star-filled">★</span>
+                <span class="star-box star-half">★</span>
+              </div>
+              <img class="trustpilot-logo trustpilot-logo-dark" src="Images/Trustpilotwhite.png" alt="Trustpilot" />
+              <img class="trustpilot-logo trustpilot-logo-light" src="Images/Trustpilot.png" alt="Trustpilot" />
+              <p class="text-muted" style="font-size: 0.85rem;">Based on 6 sample reviews</p>
+            </div>
+
+            <div class="reviews-slider-wrapper">
+              <button type="button" class="circle-arrow-btn" id="review-prev" aria-label="Previous reviews">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+
+              <div class="reviews-viewport" id="reviews-viewport">
+                <div class="reviews-track" id="reviews-track">
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-stars" aria-label="4 out of 5 stars"><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini is-empty">★</span></div>
+                      <span class="review-time" data-age-hours="11">11 hours ago</span>
+                    </div>
+                    <h3 class="review-title">Clean interface and fast deposits</h3>
+                    <p class="review-body">Everything I hold sits in one clear dashboard without clutter.</p>
+                    <div class="review-author-row"><img class="review-avatar" src="Images/rec1.jpg" alt="Hannah's avatar" /><p class="review-author">Hannah</p></div>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-stars" aria-label="4 out of 5 stars"><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini is-empty">★</span></div>
+                      <span class="review-time" data-age-hours="24">1 day ago</span>
+                    </div>
+                    <h3 class="review-title">Great for metals and ETFs</h3>
+                    <p class="review-body">Love being able to balance gold alongside fractional tech shares.</p>
+                    <div class="review-author-row"><img class="review-avatar" src="Images/rec2.jpg" alt="Marcus's avatar" /><p class="review-author">Marcus</p></div>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-stars" aria-label="4 out of 5 stars"><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini is-empty">★</span></div>
+                      <span class="review-time" data-age-hours="48">2 days ago</span>
+                    </div>
+                    <h3 class="review-title">Verification took five minutes</h3>
+                    <p class="review-body">Smooth onboarding from start to finish and clear fee breakdowns.</p>
+                    <div class="review-author-row"><img class="review-avatar" src="Images/rec3.jpg" alt="Priya's avatar" /><p class="review-author">Priya</p></div>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-stars" aria-label="5 out of 5 stars"><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span></div>
+                      <span class="review-time" data-age-hours="96">4 days ago</span>
+                    </div>
+                    <h3 class="review-title">Academy guides are genuinely useful</h3>
+                    <p class="review-body">Helped me understand index weighting before making my first trade.</p>
+                    <div class="review-author-row"><img class="review-avatar" src="Images/rec1.jpg" alt="Lukas's avatar" /><p class="review-author">Lukas</p></div>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-stars" aria-label="5 out of 5 stars"><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span></div>
+                      <span class="review-time" data-age-hours="120">5 days ago</span>
+                    </div>
+                    <h3 class="review-title">Easy to navigate</h3>
+                    <p class="review-body">The portfolio view makes it straightforward to keep track of different markets.</p>
+                    <div class="review-author-row"><img class="review-avatar" src="Images/rec2.jpg" alt="Noah's avatar" /><p class="review-author">Noah</p></div>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-stars" aria-label="5 out of 5 stars"><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span><span class="star-mini">★</span></div>
+                      <span class="review-time" data-age-hours="144">6 days ago</span>
+                    </div>
+                    <h3 class="review-title">Helpful market overview</h3>
+                    <p class="review-body">I can review my assets and market information without switching between screens.</p>
+                    <div class="review-author-row"><img class="review-avatar" src="Images/rec3.jpg" alt="Amira's avatar" /><p class="review-author">Amira</p></div>
+                  </article>
+                </div>
+              </div>
+
+              <button type="button" class="circle-arrow-btn" id="review-next" aria-label="Next reviews">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <p class="disclaimer-text">Sample reviews for demonstration</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SUPPORT / FAQ CARDS (Section 10)
+    ========================================================== -->
+    <section class="section" id="faqs" aria-labelledby="support-heading">
+      <div class="container">
+        <p class="eyebrow">Support when you need it</p>
+        <h2 id="support-heading" class="section-heading">
+          QUESTIONS? WE'RE HERE FOR YOU
+        </h2>
+
+        <div class="trust-grid">
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <h3 class="trust-title">REAL PEOPLE, REAL SUPPORT</h3>
+            <p class="trust-text">Dedicated account specialists available 24/7, 365 days a year.</p>
+          </article>
+
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3 class="trust-title">HELPDESK</h3>
+            <p class="trust-text">Browse in-depth guides, or reach us directly through our contact form.</p>
+          </article>
+
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="trust-title">COMMUNITY</h3>
+            <p class="trust-text">Join our global investor community for real-time market updates.</p>
+          </article>
+        </div>
+
+        <!-- Company SOLIDSPARK FAQ Accordion Section -->
+        <div id="solidspark-faq" style="margin-top: 56px;">
+          <div class="section-header-center">
+            <span class="pill-outline">Company Knowledge Base</span>
+            <h2 class="section-heading" style="margin-bottom: 12px;">
+              SOLIDSPARK INVESTMENT — FREQUENTLY ASKED QUESTIONS
+            </h2>
+            <p style="color: var(--text-secondary); max-width: 680px; margin: 0 auto 32px; font-size: 0.95rem;">
+              Everything you need to know about opening an account, funding your portfolio, using the SOLIDSPARK ATM card, and withdrawing profits across all asset options.
+            </p>
+          </div>
+
+          <div class="sp-faq-list">
+            <div class="sp-faq-item is-open">
+              <button type="button" class="sp-faq-btn" aria-expanded="true">
+                <span>WHAT IS SOLIDSPARK INVESTMENT (SSI) AND HOW DOES IT WORK?</span>
+                <svg class="sp-faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="sp-faq-answer">
+                SOLIDSPARK Investment is a unified multi-asset wealth and trading platform giving you fractional and direct access to crypto, gold commodities, stocks &amp; ETFs, real estate, and financial yield products—all managed under one dashboard.
+              </div>
+            </div>
+
+            <div class="sp-faq-item">
+              <button type="button" class="sp-faq-btn" aria-expanded="false">
+                <span>HOW DO I OPEN AND VERIFY MY SOLIDSPARK ACCOUNT?</span>
+                <svg class="sp-faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="sp-faq-answer">
+                Click "Start investing" or "Get started", complete your free registration, and submit a valid government-issued ID through our automated KYC partner. Most verifications finish in under 5 minutes.
+              </div>
+            </div>
+
+            <div class="sp-faq-item">
+              <button type="button" class="sp-faq-btn" aria-expanded="false">
+                <span>HOW DOES THE SOLIDSPARK ATM CARD WORK?</span>
+                <svg class="sp-faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="sp-faq-answer">
+                Your SOLIDSPARK ATM Card links directly to your investment wallet, allowing you to convert crypto, bullion, or accrued investment yields into spendable currency at ATMs and merchants worldwide with real-time notifications.
+              </div>
+            </div>
+
+            <div class="sp-faq-item">
+              <button type="button" class="sp-faq-btn" aria-expanded="false">
+                <span>HOW ARE MY FUNDS AND ASSETS PROTECTED?</span>
+                <svg class="sp-faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="sp-faq-answer">
+                Digital assets are safeguarded in multi-signature offline cold storage, precious metals are physically backed in insured bullion vaults, and institutional pools are held in ring-fenced legal structures under strict AML5 compliance.
+              </div>
+            </div>
+
+            <div class="sp-faq-item">
+              <button type="button" class="sp-faq-btn" aria-expanded="false">
+                <span>WHAT IS THE MINIMUM DEPOSIT AND HOW FAST ARE WITHDRAWALS?</span>
+                <svg class="sp-faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="sp-faq-answer">
+                You can start investing fractionally from $500 across supported assets. Deposits via crypto or supported bank channels credit rapidly, and withdrawal requests are processed 24/7 with full status tracking in your account.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+      DYNAMIC DEDICATED SERVICE PAGE VIEW (All 8 Services)
+  ========================================================== -->
+  <div id="service-page-view" aria-live="polite"></div>
+
+  <!-- =========================================================
+       DYNAMIC DEDICATED INFO / LICENCE / ARTICLE / REVIEWS VIEW
+  ========================================================== -->
+  <div id="info-page-view" aria-live="polite"></div>
+
+  <dialog class="coming-soon-dialog" id="coming-soon-dialog" aria-labelledby="coming-soon-title">
+    <h2 id="coming-soon-title">COMING SOON...</h2>
+    <p>This feature is on its way. Stay tuned!</p>
+    <button type="button" class="coming-soon-close" id="coming-soon-close">Got it</button>
+  </dialog>
+
+  <!-- =========================================================
+       FOOTER (Logo + Nav Links + Services Links, Divider, Copyright + Crypto Icons)
+  ========================================================== -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-top-row">
+        <a href="#" data-nav="home" class="ssi-logo-box" aria-label="SOLIDSPARKINVESTMENT Home">
+          <img class="brand-logo brand-logo-dark" src="Images/logoblue.png" alt="Solidspark Investment" />
+          <img class="brand-logo brand-logo-light" src="Images/logoblack.jpg" alt="Solidspark Investment" />
+        </a>
+
+        <nav class="footer-nav-links" aria-label="Footer Navigation">
+          <a href="#" data-nav="home">Home</a>
+          <a href="about.html">About</a>
+          <a href="#">Login</a>
+          <a href="#contact">Contact</a>
+          <a href="#solidspark-faq" data-nav="home">FAQs</a>
+        </nav>
+      </div>
+
+      <div class="footer-services-bar">
+        <span class="footer-services-title">Investment Services</span>
+        <nav class="footer-services-grid" aria-label="Investment Services Navigation">
+          <a href="realestate.html" data-service="real-estate" data-page-url="realestate.html">Real Estate</a>
+          <a href="gold.html" data-service="gold-commodities" data-page-url="gold.html">Gold Commodities</a>
+          <a href="crypto.html" data-service="crypto-currency" data-page-url="crypto.html">Crypto Currency</a>
+          <a href="stocks.html" data-service="stock-and-etfs" data-page-url="stocks.html">Stock and EFTs</a>
+          <a href="agriculture.html" data-service="agriculture" data-page-url="agriculture.html">Agriculture</a>
+          <a href="loans.html" data-service="loan-offers" data-page-url="loans.html">Loan Offers</a>
+          <a href="fund-recovery.html" data-service="fund-recovery" data-page-url="fund-recovery.html">Fund Recovery</a>
+          <a href="big-bank-energy.html" data-service="big-bank-energy" data-page-url="big-bank-energy.html">Big Bank Energy Investment</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-copy">
+          &copy; 2026 SOLIDSPARKINVESTMENT. All rights reserved. <a href="#">Terms</a>
+        </div>
+        <div class="crypto-icons-row" aria-label="Supported Cryptocurrencies">
+          <div class="crypto-icon-badge" title="Bitcoin">₿</div>
+          <div class="crypto-icon-badge" title="Bitcoin Cash">Ƀ</div>
+          <div class="crypto-icon-badge" title="Ethereum">Ξ</div>
+          <div class="crypto-icon-badge" title="Share / Network">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" stroke="currentColor" stroke-width="2"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       FLOATING WIDGETS (Chat Bubble on Bottom Left & Scroll to Top on Bottom Right)
+  ========================================================== -->
+  <div class="floating-chat-left" id="floating-chat-widget">
+    <div class="chat-pill-row" id="chat-pill-row">
+      <button type="button" class="chat-close-mini" id="close-chat-pill" aria-label="Dismiss chat prompt">✕</button>
+      <div class="chat-text-pill">Chat with us</div>
+    </div>
+    <button type="button" class="whatsapp-circle-btn" aria-label="Open WhatsApp Chat">
+      <img src="Images/whatsapp.png" alt="WhatsApp" />
+    </button>
+  </div>
+
+  <button type="button" class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Google Translate Official Script -->
+  <script src="assets/translate.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+  <script src="assets/ticker.js" defer></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/sparkbot.js" defer></script>
+</body>
+</html>
